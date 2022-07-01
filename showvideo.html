@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <style>
+        #myBtn {
+            font-size: 25px;
+            margin-top: 2px;
+            margin-left: 20px;
+            color: rgb(7, 7, 7);
+            border: none;
+            cursor: pointer;
+        }
+
+        #toplogodiv {
+            width: 7%;
+            height: 50%;
+            margin-left: 10px;
+        }
+
+        #toplogodiv>img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        #navbar {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            border: 0.1px solid rgb(138, 136, 136);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            align-items: center;
+            margin-top: 12px;
+            padding-bottom: 9px;
+        }
+
+        input {
+            height: 65%;
+            width: 500px;
+            margin-left: 500px;
+            border: 0.1px solid rgb(168, 165, 165);
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        #searchbtn {
+            height: 83%;
+            margin-left: -32.5px;
+            border: 0.1px solid rgb(168, 165, 165);
+            border-top: none;
+            border-bottom: none;
+            border-right: none;
+            border-left: 0.1px solid rgb(168, 165, 165);
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #record {
+            margin-left: 19px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        #record1 {
+            margin-left: 450px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #grid,
+        #bell,
+        #profile {
+            font-size: 25px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 100px;
+            background-color: rgb(196, 179, 179);
+            color: rgb(24, 22, 22);
+            text-align: center;
+            border-radius: 6px;
+            padding: 2px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: -100%;
+            left: 50%;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: -80px;
+        }
+
+        .popup .show {
+            visibility: visible;
+        }
+
+        #belownavmain {
+            margin-top: 15px;
+            width: 100%;
+            height: 900px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #popular {
+            width: 26%;
+            height: 870px;
+            overflow: scroll;
+        }
+
+        #popular::-webkit-scrollbar {
+            display: none;
+        }
+
+        #movie {
+            width: 100%;
+            height: 700px;
+            font-weight: 600;
+            font-size: 29px;
+            /* border: none; */
+        }
+
+        #div {
+            display: flex;
+            align-items: center;
+        }
+
+        #leftmain {
+            width: 80%;
+            height: 1000px;
+            margin-left: 50px;
+        }
+
+        #belowmovie {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #rightside,
+        #leftside {
+            display: flex;
+            width: 50%;
+        }
+
+        #rightside>div {
+            margin-left: 40px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #firstright {
+            margin-left: 120px !important;
+        }
+
+        #leftside>div {
+            margin-right: 30px;
+            cursor: text;
+        }
+
+        hr {
+            margin-top: 30px;
+        }
+
+        #commentpart {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+        }
+
+        #comment {
+            display: flex;
+        }
+
+        #comment>div {
+            margin-left: 10px;
+            margin-right: 35px;
+        }
+
+        #subscribe {
+            background-color: #cc0000;
+            color: aliceblue;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #addcommentmain {
+            display: flex;
+            width: 100%;
+        }
+
+        #forimg {
+            width: 3%;
+            height: 30px;
+            font-size: 22px;
+        }
+
+        #bajuchaaddcomment {
+            width: 95%;
+        }
+
+        #bajuchaaddcomment>div {
+            margin-bottom: -20px;
+            color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        iframe{
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #ifame{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+
+        <button id="myBtn" onclick="opensidebar()" class="sidebar"><i class="fa-solid fa-bars"></i></button>
+        <div id="toplogodiv" onclick="homepage()"><img
+                src="https://www.youtube.com/img/desktop/supported_browsers/yt_logo_rgb_light.png" alt=""></div>
+        <input type="text" id="query" placeholder="Search">
+        <button onclick="searchVideos()" id="searchbtn"><span><i class="fa fa-search"></i></span></button>
+
+        <div id="record" class="popup" onmouseenter="popup()"><span><i class="fa-solid fa-microphone"></i></span>
+            <span class="popuptext" id="myPopup">Search with your voice</span>
+        </div>
+
+        <div id="record1" class="popup" onmouseenter="popupp()"><span><i class="fa-solid fa-video"></i></span>
+            <span class="popuptext" id="myPopupp">Create</span>
+        </div>
+
+        <div id="grid" class="popup" onmouseenter="popuppp()"><span><i class="fa-solid fa-table-cells"></i></span>
+            <span class="popuptext" id="myPopuppp">Youtube Apps</span>
+        </div>
+
+        <div id="bell" class="popup" onmouseenter="popupppp()"><span><i class="fa-regular fa-bell"></i></span>
+            <span class="popuptext" id="myPopupppp">Notifications</span>
+        </div>
+
+        <div id="profile"><span><i class="fa-regular fa-user"></i></span></div>
+    </div>
+
+    <div id="belownavmain">
+        <div id="leftmain">
+            <div id="movie"></div>
+
+            <div id="belowmovie">
+                <div id="leftside">
+                    <div>• 12,529,252 views</div>
+                    <div> • Mar 24, 2021</div>
+                </div>
+
+
+
+                <div id="rightside">
+                    <div id="firstright"> <span><i class="fa-regular fa-thumbs-up"></i></span> 141K</div>
+
+                    <div> <span><i class="fa-regular fa-thumbs-down"></i></span> DISLIKE</div>
+
+                    <div> <span><i class="fa-solid fa-share"></i></span> SHARE</div>
+
+                    <div> <span><i class="fa-solid fa-scissors"></i></span> CLIP</div>
+
+                    <div> <span><i class="fa-solid fa-align-left"></i></span> SAVE</div>
+
+                    <div><span><i class="fa-solid fa-ellipsis"></i></span></div>
+                </div>
+
+            </div>
+            <hr>
+            <div id="commentpart">
+                <div id="comment">
+                    <div>159 Comments</div>
+                    <div><span><i class="fa-solid fa-bars-staggered"></i></span> SORT BY</div>
+                </div>
+                <button id="subscribe">SUBSCRIBE</button>
+            </div>
+            <div id="addcommentmain">
+                <div id="forimg">
+                    <span><i class="fa-regular fa-user"></i></span>
+                </div>
+                <div id="bajuchaaddcomment">
+                    <div>Add a comment ...</div>
+                    <hr>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div id="popular"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let movie = JSON.parse(localStorage.getItem("video"))
+
+    function showmovie() {
+        let iframe = document.createElement("iframe")
+        iframe.src = `https://www.youtube.com/embed/${movie.videoId}`
+        iframe.width = "96%"
+        iframe.height = "90%"
+        iframe.allow = "fullscreen"
+
+        let name = document.createElement("div")
+        name.setAttribute("id", "title")
+        name.innerText = movie.title;
+
+        document.getElementById("movie").append(iframe, name)
+
+    }
+
+    showmovie()
+
+    let APIKEY = "AIzaSyDeRfuAogaHmNqD2OQqJhy6_PAgro5iLYs"
+
+    Showpopular()
+    function Showpopular() {
+        fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key=${APIKEY}`)
+            .then(function (res) {
+                return res.json()
+            })
+            .then(function (res) {
+                appendd(res.items)
+                console.log("res", res.items)
+            })
+            .catch(function (err) {
+                console.log("err", err)
+            })
+    }
+
+
+
+
+    const appendd = (videos) => {
+        let show_videos = document.getElementById("popular")
+        show_videos.innerHTML = null
+
+        videos.forEach(({ id, snippet: { title } }) => {
+            let div = document.createElement("div")
+            div.setAttribute("id", "div")
+
+            let iframe = document.createElement("iframe")
+            iframe.setAttribute("id","ifame")
+            iframe.src = `https://www.youtube.com/embed/${id}`
+            iframe.width = "60%"
+            iframe.height = "50%"
+            iframe.allow = "fullscreen"
+
+            let name = document.createElement("div")
+            name.setAttribute("id", "title")
+            name.innerText = title;
+
+            div.append(iframe, name)
+
+            show_videos.append(div)
+        })
+    }
+
+    function popup() {
+        let popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+
+    function popupp() {
+        let popup = document.getElementById("myPopupp");
+        popup.classList.toggle("show");
+    }
+
+    function popuppp() {
+        let popup = document.getElementById("myPopuppp");
+        popup.classList.toggle("show");
+    }
+
+    function popupppp() {
+        let popup = document.getElementById("myPopupppp");
+        popup.classList.toggle("show");
+    }
+
+    function homepage() {
+        console.log("hiipp")
+        window.location.href = "index.html"
+    }
+
+
+
+</script>

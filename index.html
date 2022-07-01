@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/youtube.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+
+<body>
+
+    <div id="navbar" onclick="removesearchdiv()">
+
+        <button id="myBtn" onclick="opensidebar()" class="sidebar"><i class="fa-solid fa-bars"></i></button>
+        <div id="toplogodiv" onclick="homepage()"><img src="https://www.youtube.com/img/desktop/supported_browsers/yt_logo_rgb_light.png" alt=""></div>
+        <div id="A" >
+            <div style="display: flex;">
+                <input type="text" id="query" oninput="debouncing(combineboth,2000)" placeholder="Search">
+                <button onclick="searchVideos()" id="searchbtn"><span><i class="fa fa-search"></i></span></button>
+            </div>
+            <div id="B"></div>
+           
+        </div>
+       
+        <div id="showinsearchdiv"></div>
+
+           <button id="record"><i class="fa-solid fa-microphone"></i></button>                  
+          
+
+        <div id="record1" class="popup"  onmouseenter="popupp()"><span><i class="fa-solid fa-video"></i></span>
+            <span class="popuptext" id="myPopupp">Create</span></div>
+
+        <div id="grid" class="popup" onmouseenter="popuppp()"><span><i class="fa-solid fa-table-cells"></i></span>
+            <span class="popuptext" id="myPopuppp">Youtube Apps</span></div>
+
+        <div id="bell" class="popup" onmouseenter="popupppp()"><span><i class="fa-regular fa-bell"></i></span>
+            <span class="popuptext" id="myPopupppp">Notifications</span></div>
+
+        <div id="profile"><span><i class="fa-regular fa-user"></i></span></div>
+    </div>
+
+
+    <div id="belownavflex">
+        <div id="navbelowdiv">
+    <div id="buttondiv">
+        <button>All</button>
+        <button>Computer Programming</button><button>Comedies</button><button>Musix</button><button>Mixes</button><button>Stock Market</button><button>T-Series</button><button>Mutual Funds</button><button>Conversation</button><button>Trailers</button>
+        <button>Cricket</button>
+        <button>Gaming</button><button>MTV Splitvilla</button><button>Recently Uploaded</button>
+        <button>Thrillers</button><button>Comedies</button>
+    </div>
+    <hr>
+
+    
+    <div id="show_videos"></div>
+
+
+</div>
+    <div id="visiblesidediv">
+        <div><span id="symboll"><i class="fa-solid fa-house"></i></span></div>
+        <div id="symboltext">Home</div>
+        <div><span id="symboll"><i class="fa-solid fa-compass"></i></span></div>
+        <div id="symboltext">Explore</div>
+        <div><span id="symboll"><i class="fa-solid fa-bolt"></i></span></div>
+        <div id="symboltext">Shorts</div>
+        <div><span id="symboll"><i class="fa-regular fa-square-caret-right"></i></span></div>
+        <div id="symboltext">Subscription</div>
+        <div><span id="symboll"><i class="fa-brands fa-youtube-square"></i></span></div>
+        <div id="symboltext">Library</div>
+    </div>
+
+    <div id="sidediv">
+        <div><span id="symbo"><i class="fa-solid fa-house"></i></span>  Home</div>
+        <div><span id="symbo"><i class="fa-solid fa-compass"></i></span>  Explore</div>
+        <div><span id="symbo"><i class="fa-solid fa-bolt"></i></span>  Shorts</div>
+        <div><span id="symbo"><i class="fa-regular fa-square-caret-right"></i></span>  Subscription</div>
+        <hr>
+         
+        <div><span id="symbo"><i class="fa-brands fa-youtube-square"></i></span>  Library</div>
+        <div><span id="symbo"><i class="fa-solid fa-clock-rotate-left"></i></span>  History</div>
+        <div><span id="symbo"><i class="fa-brands fa-youtube"></i></span>  Your Videos</div>
+        <div><span id="symbo"><i class="fa-regular fa-clock"></i></span>  Watch later</div>
+        <div><span id="symbo"><i class="fa-regular fa-thumbs-up"></i></span>  Liked videos</div>
+        <div><span id="symbo"><i class="fa-solid fa-angle-down"></i></span>  Show more</div>
+        <hr>
+        <div id="subscrip">Subscriptions</div>
+        <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://yt3.ggpht.com/ytc/AKedOLTvp4FDWDA6GKmyY75k3aqW9Dxp0cdG3GTnJplb=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+        </div>
+        <div>Alright!</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://yt3.ggpht.com/ytc/AKedOLT3EnMXtIOvDT4CL7obl0-acSZCBhMuapXBQFksVQ=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+        </div>
+        <div>CodeWithHarry</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://yt3.ggpht.com/z2mTXuoK8HBJysvwq-wTK9u8vDugVSpc952wVopqfTa7KaX29gNsS0rBvqKAkEhdOoR3aT7L=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+        </div>
+        <div>MostlySane</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://yt3.ggpht.com/DzaZaTX6gdgjjPI_vkNc2dPbI794UroI9fTAunua0fa7lukDj5NDkjfhS5-w2KXuvXS02r92=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+        </div>
+        <div>T-Series</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/THE_VIRAL_FEVER_OFFICIAL_LOGO.jpg " alt=""></div>
+        </div>
+        <div>The Viral Fever</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://i.pinimg.com/736x/4b/f3/1c/4bf31c2d5b4429d571d8bf72f5c822bd.jpg" alt=""></div>
+        </div>
+        <div>CarryMinati</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://yt3.ggpht.com/ytc/AKedOLR_bgBzfigiGps023vjg6TIDQvHyM5ELQAm3Piqrg=s900-c-k-c0x00ffffff-no-rj" alt=""></div>
+        </div>
+        <div>Hasley India</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://punerithaska.files.wordpress.com/2021/03/20200710_201928_2.png" alt=""></div>
+        </div>
+        <div>CA Rachana Phadke</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://pbs.twimg.com/profile_images/1477930785537605633/ROTVNVz7_400x400.jpg" alt=""></div>
+        </div>
+        <div>CodeChef</div> 
+    </div>
+    <div id="Subcription">
+        <div><div id="sideimgdiv">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl9Tb1j0Qf-P_3NxBMQbbnWARQJ7VbjQQJmPJf2t4NuTsrRwWCvPnaRjSbOI2Gn1Xdymk&usqp=CAU" alt=""></div>
+        </div>
+        <div>Engineers Academy</div> 
+    </div>
+    <div id="showmore"><span id="symboo"><i class="fa-solid fa-angle-down"></i></span>  Show more</div>
+    <hr>
+
+    <div id="subscrip">More from youtube</div>
+    <div><span id="symbo"><i class="fa-brands fa-youtube"></i></span>  Youtube Premium</div>
+    <div><span id="symbo"><i class="fa-solid fa-video"></i></span>  Movies</div>
+    <div><span id="symbo"><i class="fa-solid fa-gamepad"></i></span>  Gaming</div>
+    <div><span id="symbo"><i class="fa-solid fa-ear-listen"></i></span>  Live</div>
+    <div><span id="symbo"><i class="fa-solid fa-house-chimney-user"></i></span>  Fashion & Beauty</div>
+    <div><span id="symbo"><i class="fa-regular fa-lightbulb"></i></span>  Learning</div>
+    <div><span id="symbo"><i class="fa-solid fa-trophy"></i></span>  Sports</div>
+    <hr>
+
+    <div><span id="symbo"><i class="fa-solid fa-gear"></i></span>  Settings</div>
+    <div><span id="symbo"><i class="fa-regular fa-font-awesome"></i></span>  Report History</div>
+    <div><span id="symbo"><i class="fa-regular fa-circle-question"></i></span>  Help</div>
+    <div><span id="symbo"><i class="fa-solid fa-angle-down"></i></span>  Send Feedback</div>
+    <hr>
+    <div id="sidedown1">
+        <p>About</p><p>Press</p><p>Copyright</p>
+    </div>
+    <div id="sidedown1">   <p>Contact Us</p>  <p>Creator</p></div>
+     <div id="sidedown1">  <p>Advertise</p>   <p>Developers</p></div>
+     <div id="sidedown1">  <p>Terms</p>  <p>Privacy</p>  <p>Policy & Safety</p></div>
+     <div id="sidedown2">How Youtube Works</div>
+     <div id="sidedown2">Test new feutures</div>
+     <div id="lowerside">© 2022 Google LLC</div>
+    </div>
+</div>
+    
+    
+</body>
+</html>
+
+
+
+<script src="./Scripts/youtube.js">
+
+</script>
+
+
+
+<!-- <iframe width="560" 
+height="315" 
+src="https://www.youtube.com/embed/V7vLpGthugY" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe> -->
