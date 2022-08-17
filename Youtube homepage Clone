@@ -1,0 +1,17 @@
+Cloned https://www.youtube.com/ light theme version with all the basic functionalities using youtube API.
+
+Features:
+
+Home Page
+Search Functionality
+Youtube API
+Debouncing for reducing API Calls
+Watch searched video
+Can view searched video in full screen
+
+Tech Stack
+
+HTML,
+CSS,
+Javascript
+YouTube Data API - Google Developers
