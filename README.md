@@ -1,14 +1,14 @@
-<h1>YouTube homepage Clone</h1>
-<br>
+<h2>YouTube homepage Clone</h2>
+<hr>
 Cloned https://www.youtube.com/ light theme version with all the basic functionalities using youtube API.
-<br>
+<hr>
 
-<h1>Deployment Link</h1>
-<br>
+<h3>Deployment Link</h3>
+<hr>
 
 
-<h1>Features</h1>
-<br>
+<h3>Features</h3>
+<hr>
 
 <li>Home Page</li>
 <li>Search Functionality</li>
@@ -26,8 +26,10 @@ Cloned https://www.youtube.com/ light theme version with all the basic functiona
 <li>YouTube Data API - Google Developers</li>
 
 <hr>
-
-<h1>ScreenShots</h1>
+<h3>Deployed Link</h3>
+youtube-homepage88-clone.netlify.app/
+<hr>
+<h3>ScreenShots</h3>
 <br>
 
 <img src="https://user-images.githubusercontent.com/101566134/185574747-75863137-a98a-4eb7-a028-837ae6a7e25c.png"/>
