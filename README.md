@@ -8,7 +8,6 @@ Cloned https://www.youtube.com/ light theme version with all the basic functiona
 
 
 <h3>Features</h3>
-<hr>
 
 <li>Home Page</li>
 <li>Search Functionality</li>
