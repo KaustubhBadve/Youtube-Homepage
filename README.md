@@ -3,7 +3,7 @@
 Cloned https://www.youtube.com/ light theme version with all the basic functionalities using youtube API.
 <hr>
 
-<h3>Deployment Link</h3>
+<h3>Deployment Link : youtube-homepage88-clone.netlify.app/</h3>
 <hr>
 
 
@@ -25,9 +25,6 @@ Cloned https://www.youtube.com/ light theme version with all the basic functiona
 <li>Javascript</li>
 <li>YouTube Data API - Google Developers</li>
 
-<hr>
-<h3>Deployed Link</h3>
-youtube-homepage88-clone.netlify.app/
 <hr>
 <h3>ScreenShots</h3>
 <br>
